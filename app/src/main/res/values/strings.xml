@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">KhataBook</string>
+    <string name="uddar">Udhaar-Jamma Phone</string>
+    <string name="par">par Manage Karein</string>
+    <string name="trusted">Trusted by 20Lac+ Buisnessmen across India</string>
+    <string name="my_cart">Verify Phone Number</string>
+    <string name="india_code">+91</string>
+    <string name="code">Code Sent to +91 8360659901</string>
+    <string name="edit">EDIT NUMBER</string>
+    <string name="buisness">Buisness/Shop name</string>
+    <string name="free">You can send FREE SMS to your customers</string>
+    <string name="customer">Your customers can identify your buisness</string>
 </resources>
