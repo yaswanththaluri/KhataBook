@@ -54,11 +54,10 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="phone"
+                        android:inputType="text"
                         android:hint="Enter shop/buisness name"
                         android:background="@drawable/edit_card"
-                        android:id="@+id/auth_otp"
-                        android:maxLength="6" />
+                        android:id="@+id/buinessName" />
 
                 </LinearLayout>
 
