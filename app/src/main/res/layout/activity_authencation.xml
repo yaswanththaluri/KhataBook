@@ -212,7 +212,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="phone"
-                            android:hint="Enter Mobile Number"
+                            android:hint="Enter OTP"
                             android:background="@drawable/edit_card"
                             android:id="@+id/auth_otp"
                             android:maxLength="6" />
