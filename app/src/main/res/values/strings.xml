@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KhataBook</string>
+    <string name="app_name">Digital Account Manager</string>
     <string name="uddar">Udhaar-Jamma Phone</string>
     <string name="par">par Manage Karein</string>
     <string name="trusted">Trusted by 20Lac+ Buisnessmen across India</string>
@@ -10,4 +10,18 @@
     <string name="buisness">Buisness/Shop name</string>
     <string name="free">You can send FREE SMS to your customers</string>
     <string name="customer">Your customers can identify your buisness</string>
+    <string name="youwill">You will give</string>
+    <string name="youwillget">You will get</string>
+    <string name="customername">2 Customers</string>
+    <string name="person_name">Manikyapavan</string>
+    <string name="date">Friday 21 February</string>
+    <string name="home">Home</string>
+    <string name="More">More</string>
+    <string name="seeprofile">See Profile</string>
+    <string name="AddCustomer">Add Customer</string>
+    <string name="profile">Profile</string>
+    <string name="fullname">Name</string>
+    <string name="businessname">Buisness Name</string>
+    <string name="submit">Submit</string>
+    <string name="mobilenumber">Mobile Number</string>
 </resources>
