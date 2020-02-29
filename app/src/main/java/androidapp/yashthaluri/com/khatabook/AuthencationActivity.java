@@ -19,13 +19,18 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
+import androidapp.yashthaluri.com.khatabook.Models.ProfileHelper;
 import androidapp.yashthaluri.com.khatabook.databinding.ActivityAuthencationBinding;
 
 public class AuthencationActivity extends AppCompatActivity {
@@ -33,6 +38,8 @@ public class AuthencationActivity extends AppCompatActivity {
     private String mVerificationId;
     private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
+    private String mobileNumber;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
@@ -62,6 +69,7 @@ public class AuthencationActivity extends AppCompatActivity {
                String mobileNo = binding.authMobileNo.getText().toString();
                if (mobileNo.length()==10)
                {
+                   mobileNumber = mobileNo;
                    binding.otpText.setText("Code sent to "+mobileNo);
                    progressDialog.setMessage("Sending OTP..Please wait!");
                    progressDialog.show();
@@ -145,9 +153,7 @@ public class AuthencationActivity extends AppCompatActivity {
                             //verification successful we will start the profile activity
                             Toast.makeText(AuthencationActivity.this, "Auth Success", Toast.LENGTH_SHORT).show();
 
-
-                            Intent i = new Intent(AuthencationActivity.this, MainActivity.class);
-                            startActivity(i);
+                            checkProfileData();
 
                         } else {
 
@@ -163,6 +169,65 @@ public class AuthencationActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void checkProfileData()
+    {
+        databaseReference = database.getReference().child("businesses");
+        user = mAuth.getCurrentUser();
+        try {
+            databaseReference.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    ProfileHelper helper = dataSnapshot.getValue(ProfileHelper.class);
+                    try {
+                        if (helper.getPhoneNumber().equals("None"))
+                        {
+                            Log.i("checkProfileexist3", "true");
+                            fillProfileData();
+                        }
+                        else if(helper.getBusinessName().equals("None"))
+                        {
+                            Log.i("checkProfileexist4", "bussNone"+helper.getBusinessName());
+                            Intent i = new Intent(AuthencationActivity.this, MainActivity.class);
+                            startActivity(i);
+                        }
+                        else
+                        {
+                            Log.i("checkProfileexist5", "false");
+                            Intent i = new Intent(AuthencationActivity.this, HomeActivity.class);
+                            startActivity(i);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        fillProfileData();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        }
+        catch (Exception e)
+        {
+            Log.i("checkProfileexist6", "exception");
+            fillProfileData();
+        }
+    }
+
+    private void fillProfileData()
+    {
+        user = mAuth.getCurrentUser();
+        ProfileHelper newProfile = new ProfileHelper(user.getPhoneNumber(), "None", user.getUid(), "None", "None");
+        databaseReference.child(user.getUid()).setValue(newProfile);
+
+        Intent i = new Intent(AuthencationActivity.this, MainActivity.class);
+        startActivity(i);
     }
 
 }
