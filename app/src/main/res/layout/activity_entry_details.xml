@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntryDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        style="@style/form_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/entry" />
+        <ImageView
+            style="@style/toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:src="@drawable/ic_arrow_back" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:text="Edit"
+            android:id="@+id/edit"
+            android:layout_toRightOf="@id/toolbarText"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/blue"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yougavemoney"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:id="@+id/yougavemoney"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="10,000"
+        android:textColor="#10C73D"
+        android:id="@+id/moneygiven"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/yougavemoney"
+        android:textSize="20dp"
+        android:drawableLeft="@drawable/money_green">
+
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ondate"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/moneygiven"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="14sp"
+
+        android:id="@+id/dateongiven"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/running"
+        android:layout_below="@id/dateongiven"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/deletetransaction"
+        android:id="@+id/sharewhatsup"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Khata_BookDetails"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/language4">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginLeft="20dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/ic_chevron_right_black_16dp"></ImageView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D32929"
+        android:text="DELETE TRANSACTION"
+        android:id="@+id/deletetransaction"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+
+        ></Button>
+
+
+</RelativeLayout>

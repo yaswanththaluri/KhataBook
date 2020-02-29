@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditEntryDetailsActivity">
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        style="@style/form_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/entry" />
+        <ImageView
+            style="@style/toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:src="@drawable/ic_arrow_back" />
+
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/EnterMoney"
+        style="@style/form_edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:drawableStart="@drawable/money_green"
+        android:background="@drawable/form_edittext1" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/EnterMoney"
+        android:background="#738295"
+        android:id="@+id/divider1"/>
+    <EditText
+        android:id="@+id/EnterNote"
+        style="@style/form_edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter note"
+        android:layout_below="@id/divider1"
+        android:drawableStart="@drawable/money_green"
+        android:background="@drawable/form_edittext1" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/EnterMoney"
+        android:background="#738295" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/savetransaction"
+        android:id="@+id/outer_linearlayout"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/calender_icon"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Transaction Edit Details"
+                android:textSize="14dp">
+
+
+            </TextView>
+
+
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/calender_icon"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Trasaction Date"
+                android:textSize="14dp"
+              >
+
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28 FEB 2020"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#013F7C"
+        android:text="SAVE"
+        android:id="@+id/savetransaction"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+
+        ></Button>
+
+
+</RelativeLayout>
