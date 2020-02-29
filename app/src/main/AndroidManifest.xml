@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".KhataSettingsActivity"></activity>
+        <activity android:name=".SplashScreenActivity"></activity>
         <activity android:name=".EditEntryDetailsActivity" />
         <activity android:name=".EntryDetailsActivity" />
         <activity android:name=".FeedbackActivity" />
@@ -32,7 +32,7 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".KhataSettingsActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

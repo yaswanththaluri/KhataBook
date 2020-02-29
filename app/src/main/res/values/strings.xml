@@ -41,8 +41,8 @@
     <string name="khatasettings">Khata Settings</string>
     <string name="generalsettings">General Settings</string>
     <string name="backup">Backup Information</string>
-    <string name="backup_information">Your data is automatically backed-up whenver your \\n phone is connected to the internet.In case you format this phone or mistakenly delete the app.Just download /n the app again and login uisng phone /n number.Your data will be automatically restored</string>
+    <string name="backup_information">Your data is automatically backed-up whenver your \n phone is connected to the internet.In case you format this phone or mistakenly delete the app.Just download \n the app again and login uisng phone /n number.Your data will be automatically restored</string>
     <string name="deletkhata">Delete Khata</string>
-    <string name="delete_khatainfomation">Your are going to delete this customer.By doing \\n so you will loose all the entries in this \\n khata.Are you ABSOLUTELY sure?</string>
-    <string name="delete_button">To delete type the Account name and press the \\n delete button</string>
+    <string name="delete_khatainfomation">Your are going to delete this customer.By doing \n so you will loose all the entries in this \n khata.Are you ABSOLUTELY sure?</string>
+    <string name="delete_button">To delete type the Account name and press the \n delete button</string>
 </resources>
