@@ -96,7 +96,6 @@
                 android:id="@+id/next"
                 android:textColor="@color/white"
                 android:layout_alignParentBottom="true"
-
                 ></Button>
 
 

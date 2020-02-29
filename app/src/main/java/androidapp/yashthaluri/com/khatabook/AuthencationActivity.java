@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -120,6 +121,7 @@ public class AuthencationActivity extends AppCompatActivity {
             progressDialog.cancel();
             //storing the verification id that is sent to the user
             mVerificationId = s;
+            Log.e("check",mVerificationId);
         }
     };
 

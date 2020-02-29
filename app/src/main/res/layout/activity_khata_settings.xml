@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".KhataSettingsActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/khata_Settingslayout">
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                style="@style/form_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <TextView
+                    android:id="@+id/toolbarText"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+
+
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/khatasettings" />
+
+                <ImageView
+                    style="@style/toolbar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/back"
+                    android:src="@drawable/ic_arrow_back" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generalsettings"
+                android:textSize="15sp"
+                android:layout_below="@id/toolbar"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:id="@+id/general"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/lienarlayout1"
+                android:layout_below="@id/general"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Backup Information"
+                    android:textAlignment="center"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:id="@+id/last_sync"
+                    android:text="Last sync at 12:17 PM 29.02.2020"
+                    android:textAlignment="center"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:id="@+id/divider"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/lienarlayout1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/divider"
+                android:id="@+id/linearlayout2"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Delete Khata"
+                    android:textAlignment="center"
+                    android:textColor="#D32929"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Permanently delete this Khata"
+                    android:textAlignment="center"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/backup_infolayout"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/toolbar_backup"
+                style="@style/form_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <TextView
+                    android:id="@+id/toolbarText_backup"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/backup" />
+
+                <ImageView
+                    style="@style/toolbar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/back_backupinfo"
+                    android:src="@drawable/ic_arrow_back" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backupinfo"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:textStyle="normal"
+
+                android:text="@string/backup_information"
+                android:layout_below="@id/toolbar_backup" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/backup_layout"
+                android:layout_below="@id/backupinfo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="LAST BACKUP AT"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:id="@+id/time"
+                    android:layout_marginTop="5dp"
+                    android:text="12:17 PM 29.02.2020"
+                    android:textAlignment="center"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/delete_khatalayout"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/toolbar_deletekhata"
+                style="@style/form_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <TextView
+                    android:id="@+id/toolbarText_deletekhata"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/deletkhata" />
+
+                <ImageView
+                    style="@style/toolbar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/back_backupdeletekhata"
+                    android:src="@drawable/ic_arrow_back" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/delte_khatainfo"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:textStyle="normal"
+                android:textColor="#D32929"
+                android:text="@string/delete_khatainfomation"
+                android:layout_below="@id/toolbar_deletekhata" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="@string/delete_button"
+                android:layout_below="@id/delte_khatainfo"
+                android:id="@+id/deleteinfo"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:id="@+id/divider_deletekhata1"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/deleteinfo" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/card1"
+                android:layout_below="@id/divider_deletekhata1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:hint="Enter 'Digital AccountName'"
+                        android:background="@drawable/edit_card"
+                        android:id="@+id/cutomername"
+                        android:maxLength="6" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/card1"
+                android:background="#D32929"
+                android:text="Delete"
+                android:layout_marginTop="10dp"
+                android:id="@+id/deletekhata"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

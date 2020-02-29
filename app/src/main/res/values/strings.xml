@@ -24,4 +24,25 @@
     <string name="businessname">Buisness Name</string>
     <string name="submit">Submit</string>
     <string name="mobilenumber">Mobile Number</string>
+    <string name="transactiontext">only you and ram and you can see these entries</string>
+    <string name="yougave">You Gave</string>
+    <string name="yougot">YOU GOT</string>
+    <string name="addtransaction">Add first transaction of ram</string>
+    <string name="personagiven">rama gave you ₹0</string>
+    <string name="enterbill">Enter Details (Item Name,Bill No,Quantity...)</string>
+    <string name="Khatabookdesc">Digital Account Manager App Ko lekhar koi bhu samsya ya kol \n feedback ho tho call karein</string>
+    <string name="Khatabookeng">Call us if you have any feedback or any new feature reuest</string>
+    <string name="entries">ENTRIES</string>
+    <string name="feedback">FeedBack</string>
+    <string name="entry">Entry Details</string>
+    <string name="yougavemoney">ram gave</string>
+    <string name="ondate">on 28 Feb 2020</string>
+    <string name="running">Running Balance ₹10,000 (You\'ll Give)</string>
+    <string name="khatasettings">Khata Settings</string>
+    <string name="generalsettings">General Settings</string>
+    <string name="backup">Backup Information</string>
+    <string name="backup_information">Your data is automatically backed-up whenver your \n phone is connected to the internet.In case you format this phone or mistakenly delete the app.Just download \n the app again and login uisng phone /n number.Your data will be automatically restored</string>
+    <string name="deletkhata">Delete Khata</string>
+    <string name="delete_khatainfomation">Your are going to delete this customer.By doing \n so you will loose all the entries in this \n khata.Are you ABSOLUTELY sure?</string>
+    <string name="delete_button">To delete type the Account name and press the \n delete button</string>
 </resources>

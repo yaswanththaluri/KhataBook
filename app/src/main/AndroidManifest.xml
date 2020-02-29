@@ -11,22 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ProfileActivty"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".AddCustomerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".HomeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AuthencationActivity"
-            android:screenOrientation="portrait"/>
-
-
-
-
-
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".SplashScreenActivity"></activity>
+        <activity android:name=".EditEntryDetailsActivity" />
+        <activity android:name=".EntryDetailsActivity" />
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".TrasactionAddActivity" />
+        <activity
+            android:name=".ProfileActivty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddCustomerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AuthencationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".KhataSettingsActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
