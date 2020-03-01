@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import androidapp.yashthaluri.com.khatabook.Models.CustomerProfileHelper;
 import androidapp.yashthaluri.com.khatabook.Models.CutsomerDetails;
 import androidapp.yashthaluri.com.khatabook.Models.ProfileHelper;
 import androidapp.yashthaluri.com.khatabook.databinding.ActivityHomeBinding;
@@ -42,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
+
+        cutsomerDetails = new ArrayList<>();
 
         binding= DataBindingUtil.setContentView(this,R.layout.activity_home);
         binding.MoreButton.setOnClickListener(new View.OnClickListener() {
@@ -81,19 +85,10 @@ public class HomeActivity extends AppCompatActivity {
         customerHomeAdapter=new CustomerHomeAdapter(this, cutsomerDetails);
         binding.detailRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         binding.detailRecyclerview.setAdapter(customerHomeAdapter);
-        data();
 
 
     }
 
-    private void data() {
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-    }
 
     public void populateProfileData()
     {
@@ -105,13 +100,32 @@ public class HomeActivity extends AppCompatActivity {
                 if (money>=0)
                 {
                     String m = ""+(money);
-                    binding.moneyGive.setText(m);
+                    binding.moneyUgive.setText(m);
                 }
                 else
                 {
                     String m = ""+(-1*money);
-                    binding.moneyGet.setText(m);
+                    binding.moneyUget.setText(m);
                 }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        reference.child("khatas").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot i : dataSnapshot.getChildren())
+                {
+                    CustomerProfileHelper helper = i.getValue(CustomerProfileHelper.class);
+                    cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,helper.getMoney(),helper.getName(),"30 Minutes Ago"));
+                    Log.i("Data", helper.getName());
+                }
+                binding.detailRecyclerview.setAdapter(customerHomeAdapter);
             }
 
             @Override

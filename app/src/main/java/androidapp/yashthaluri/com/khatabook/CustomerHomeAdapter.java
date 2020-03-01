@@ -1,6 +1,7 @@
 package androidapp.yashthaluri.com.khatabook;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +27,16 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
     @NonNull
     @Override
     public CustomerHomeAdapter.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.layout_customer,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.layout_transactionlist,parent,false);
         return new CustomerViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomerHomeAdapter.CustomerViewHolder holder, int position) {
+        Log.i("position", ""+position);
+        Log.i("List", ""+customerdetailsModel);
         holder.PersonImage.setImageResource(customerdetailsModel.get(position).getBitmap());
+
         holder.personName.setText(customerdetailsModel.get(position).getName());
         holder.time.setText(customerdetailsModel.get(position).getTime());
         holder.Amount.setText(customerdetailsModel.get(position).getAmount());
@@ -48,7 +52,7 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
         TextView personName,time,Amount;
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
-            personName=itemView.findViewById(R.id.person_name);
+            personName=itemView.findViewById(R.id.digital_accountname);
             PersonImage = itemView.findViewById(R.id.detail_user_image);
             time =itemView.findViewById(R.id.time);
             Amount=itemView.findViewById(R.id.amount);
