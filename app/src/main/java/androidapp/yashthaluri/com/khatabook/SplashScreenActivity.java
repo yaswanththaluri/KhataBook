@@ -50,14 +50,21 @@ public class SplashScreenActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             ProfileHelper helper = dataSnapshot.getValue(ProfileHelper.class);
-                            if (helper.getBusinessName().equals("None"))
+                            try {
+                                if (helper.getBusinessName().equals("None"))
+                                {
+                                    Intent intent = new Intent(SplashScreenActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                }
+                                else
+                                {
+                                    Intent intent = new Intent(SplashScreenActivity.this,HomeActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                            catch (Exception e)
                             {
                                 Intent intent = new Intent(SplashScreenActivity.this,MainActivity.class);
-                                startActivity(intent);
-                            }
-                            else
-                            {
-                                Intent intent = new Intent(SplashScreenActivity.this,HomeActivity.class);
                                 startActivity(intent);
                             }
                             finish();

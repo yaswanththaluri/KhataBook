@@ -7,19 +7,21 @@ public class ProfileHelper
     private String uniqueId;
     private String ownerName;
     private String imageUrl;
+    private String money;
 
     public ProfileHelper()
     {
 
     }
 
-    public ProfileHelper(String phoneNumber, String businessName, String  uniqueId, String ownerName, String imageUrl)
+    public ProfileHelper(String phoneNumber, String businessName, String  uniqueId, String ownerName, String imageUrl, String  money)
     {
         this.phoneNumber = phoneNumber;
         this.businessName = businessName;
         this.uniqueId = uniqueId;
         this.ownerName = ownerName;
         this.imageUrl = imageUrl;
+        this.money = money;
     }
 
 
@@ -62,5 +64,13 @@ public class ProfileHelper
 
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
     }
 }

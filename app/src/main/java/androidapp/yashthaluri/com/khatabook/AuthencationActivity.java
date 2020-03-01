@@ -223,7 +223,7 @@ public class AuthencationActivity extends AppCompatActivity {
     private void fillProfileData()
     {
         user = mAuth.getCurrentUser();
-        ProfileHelper newProfile = new ProfileHelper(user.getPhoneNumber(), "None", user.getUid(), "None", "None");
+        ProfileHelper newProfile = new ProfileHelper(user.getPhoneNumber(), "None", user.getUid(), "None", "None", "0");
         databaseReference.child(user.getUid()).setValue(newProfile);
 
         Intent i = new Intent(AuthencationActivity.this, MainActivity.class);
