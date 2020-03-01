@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import androidapp.yashthaluri.com.khatabook.Model.CutsomerDetails;
+import androidapp.yashthaluri.com.khatabook.Models.CutsomerDetails;
 
 public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapter.CustomerViewHolder> {
     Context context;

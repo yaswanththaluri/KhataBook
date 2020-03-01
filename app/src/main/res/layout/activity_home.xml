@@ -71,6 +71,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="0"
                                 android:textColor="#10C73D"
+                                android:id="@+id/moneyGive"
                                 android:textSize="16dp"
                                 android:drawableLeft="@drawable/money_green">
 
@@ -83,6 +84,7 @@
                                 android:text="@string/youwill"
                                 android:textSize="16dp"
                                 android:textStyle="normal"
+                                android:id="@+id/moneyGet"
                                 android:layout_marginLeft="50dp"
                                 android:layout_marginTop="5dp" />
 
