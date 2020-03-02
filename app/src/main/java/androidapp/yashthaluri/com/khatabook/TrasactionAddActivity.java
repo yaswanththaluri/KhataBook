@@ -12,7 +12,7 @@ import androidapp.yashthaluri.com.khatabook.Models.TransactionDetails;
 import androidapp.yashthaluri.com.khatabook.databinding.ActivityTrasactionAddBinding;
 
 public class TrasactionAddActivity extends AppCompatActivity {
-    ArrayList<TransactionDetails> transactionDetails;
+    ArrayList<TransactionDetails> transactionDetails=new ArrayList<TransactionDetails>();
     TransactionDetailsAdapter transactionDetailsAdapter;
     ActivityTrasactionAddBinding binding;
 
@@ -30,11 +30,7 @@ public class TrasactionAddActivity extends AppCompatActivity {
     }
 
     private void data() {
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
-        transactionDetails.add(new TransactionDetails("01:03:2020",0,10000));
+        transactionDetails.add(new TransactionDetails("01:03:2020","0","10000"));
+
     }
 }

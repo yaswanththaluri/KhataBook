@@ -1,10 +1,12 @@
 package androidapp.yashthaluri.com.khatabook.Models;
 
 public class CutsomerDetails {
-    int Bitmap,amount;
-    String name,time;
+    int Bitmap;
+    String name;
+    String time,amount;
 
-    public CutsomerDetails(int bitmap, int amount, String name, String time) {
+
+    public CutsomerDetails(int bitmap, String amount, String name, String time) {
         Bitmap = bitmap;
         this.amount = amount;
         this.name = name;
@@ -19,11 +21,11 @@ public class CutsomerDetails {
         Bitmap = bitmap;
     }
 
-    public int getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

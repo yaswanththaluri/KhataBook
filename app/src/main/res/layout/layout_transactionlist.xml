@@ -69,7 +69,7 @@
                 android:layout_marginTop="20dp"
                 android:text="0"
                 android:textColor="#10C73D"
-                android:id="@+id/amount"
+                android:id="@+id/amountAdded"
                 android:layout_marginEnd="30dp"
                 android:layout_alignParentRight="true"
                 android:textSize="16dp"

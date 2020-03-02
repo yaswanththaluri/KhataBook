@@ -17,7 +17,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".FeedbackActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".TrasactionAddActivity"
+        <activity android:name=".SplashScreenActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ProfileActivty"
@@ -26,7 +26,7 @@
             android:name=".AddCustomerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".TrasactionAddActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AuthencationActivity"
@@ -39,7 +39,7 @@
             android:name=".KhataSettingsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -25,7 +25,7 @@ import androidapp.yashthaluri.com.khatabook.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;
-    ArrayList<CutsomerDetails> cutsomerDetails;
+    ArrayList<CutsomerDetails> cutsomerDetails = new ArrayList<CutsomerDetails>();
     CustomerHomeAdapter customerHomeAdapter;
 
     private FirebaseAuth auth;
@@ -37,11 +37,11 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference();
+//        auth = FirebaseAuth.getInstance();
+//        user = auth.getCurrentUser();
+//
+//        database = FirebaseDatabase.getInstance();
+//        reference = database.getReference();
 
         binding= DataBindingUtil.setContentView(this,R.layout.activity_home);
         binding.MoreButton.setOnClickListener(new View.OnClickListener() {
@@ -87,43 +87,39 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void data() {
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-        cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,4000,"Manikyapavan","30 Minutes Ago"));
-    }
+      cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,"1000","Manikyapavan","40 Minutes ago"));
 
-    public void populateProfileData()
-    {
-        reference.child("businesses").child(user.getUid()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ProfileHelper helper = dataSnapshot.getValue(ProfileHelper.class);
-                Integer money = Integer.parseInt(helper.getMoney());
-                if (money>=0)
-                {
-                    String m = ""+(money);
-                    binding.moneyGive.setText(m);
-                }
-                else
-                {
-                    String m = ""+(-1*money);
-                    binding.moneyGet.setText(m);
-                }
-            }
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        populateProfileData();
-    }
+//    public void populateProfileData()
+//    {
+//        reference.child("businesses").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                ProfileHelper helper = dataSnapshot.getValue(ProfileHelper.class);
+//                Integer money = Integer.parseInt(helper.getMoney());
+//                if (money>=0)
+//                {
+//                    String m = ""+(money);
+//                    binding.moneyGive.setText(m);
+//                }
+//                else
+//                {
+//                    String m = ""+(-1*money);
+//                    binding.moneyGet.setText(m);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        populateProfileData();
+//    }
 }
