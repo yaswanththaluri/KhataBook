@@ -2,18 +2,19 @@ package androidapp.yashthaluri.com.khatabook.Models;
 
 public class CutsomerDetails {
     int Bitmap;
-    String name,time, amount;
+    String name,time, amount, uid;
 
     public CutsomerDetails()
     {
 
     }
 
-    public CutsomerDetails(int bitmap, String amount, String name, String time) {
+    public CutsomerDetails(int bitmap, String amount, String name, String time, String uid) {
         Bitmap = bitmap;
         this.amount = amount;
         this.name = name;
         this.time = time;
+        this.uid = uid;
     }
 
     public int getBitmap() {
@@ -46,5 +47,13 @@ public class CutsomerDetails {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

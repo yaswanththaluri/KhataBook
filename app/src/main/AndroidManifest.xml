@@ -11,14 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".EditEntryDetailsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EntryDetailsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FeedbackActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TrasactionAddActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".ActivityGiveGot"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".EditEntryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EntryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TrasactionAddActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ProfileActivty"
             android:screenOrientation="portrait" />
@@ -34,7 +40,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".KhataSettingsActivity"
             android:screenOrientation="portrait" />

@@ -2,9 +2,9 @@ package androidapp.yashthaluri.com.khatabook.Models;
 
 public class TransactionDetails {
    String Date;
-   int YouGave,YouGot;
+   String YouGave,YouGot;
 
-    public TransactionDetails(String date, int youGave, int youGot) {
+    public TransactionDetails(String date, String youGave, String youGot) {
         Date = date;
         YouGave = youGave;
         YouGot = youGot;
@@ -18,19 +18,19 @@ public class TransactionDetails {
         Date = date;
     }
 
-    public int getYouGave() {
+    public String getYouGave() {
         return YouGave;
     }
 
-    public void setYouGave(int youGave) {
+    public void setYouGave(String youGave) {
         YouGave = youGave;
     }
 
-    public int getYouGot() {
+    public String getYouGot() {
         return YouGot;
     }
 
-    public void setYouGot(int youGot) {
+    public void setYouGot(String youGot) {
         YouGot = youGot;
     }
 }

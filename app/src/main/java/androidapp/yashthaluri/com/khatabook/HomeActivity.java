@@ -122,10 +122,11 @@ public class HomeActivity extends AppCompatActivity {
                 for (DataSnapshot i : dataSnapshot.getChildren())
                 {
                     CustomerProfileHelper helper = i.getValue(CustomerProfileHelper.class);
-                    cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,helper.getMoney(),helper.getName(),"30 Minutes Ago"));
+                    cutsomerDetails.add(new CutsomerDetails(R.drawable.ic_home_black_16dp,helper.getMoney(),helper.getName(),"30 Minutes Ago", helper.getUid()));
                     Log.i("Data", helper.getName());
+                    customerHomeAdapter.notifyDataSetChanged();
                 }
-                binding.detailRecyclerview.setAdapter(customerHomeAdapter);
+
             }
 
             @Override
@@ -138,6 +139,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        cutsomerDetails.clear();
         populateProfileData();
     }
 }

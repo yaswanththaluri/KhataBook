@@ -1,11 +1,14 @@
 package androidapp.yashthaluri.com.khatabook;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +35,7 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomerHomeAdapter.CustomerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CustomerHomeAdapter.CustomerViewHolder holder, final int position) {
         Log.i("position", ""+position);
         Log.i("List", ""+customerdetailsModel);
         holder.PersonImage.setImageResource(customerdetailsModel.get(position).getBitmap());
@@ -40,6 +43,15 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
         holder.personName.setText(customerdetailsModel.get(position).getName());
         holder.time.setText(customerdetailsModel.get(position).getTime());
         holder.Amount.setText(customerdetailsModel.get(position).getAmount());
+
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, TrasactionAddActivity.class);
+                i.putExtra("customerUID", customerdetailsModel.get(position).getUid());
+                context.startActivity(i);
+            }
+        });
 
     }
 
@@ -50,12 +62,15 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
     public class CustomerViewHolder extends RecyclerView.ViewHolder {
         ImageView PersonImage;
         TextView personName,time,Amount;
+        LinearLayout item;
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
             personName=itemView.findViewById(R.id.digital_accountname);
             PersonImage = itemView.findViewById(R.id.detail_user_image);
             time =itemView.findViewById(R.id.time);
             Amount=itemView.findViewById(R.id.amount);
+            item = itemView.findViewById(R.id.custItem);
         }
     }
 }

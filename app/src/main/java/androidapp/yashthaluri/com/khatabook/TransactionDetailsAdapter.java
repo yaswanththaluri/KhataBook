@@ -34,9 +34,9 @@ public class TransactionDetailsAdapter extends RecyclerView.Adapter<TransactionD
 
     @Override
     public void onBindViewHolder(@NonNull TransactionDetailsAdapter.TransactionViewHolder holder, int position) {
-holder.Date1.setText(transactionDetails.get(position).getDate());
-holder.YouGave.setText(transactionDetails.get(position).getYouGave());
-holder.YouGot.setText(transactionDetails.get(position).getYouGot());
+            holder.Date1.setText(transactionDetails.get(position).getDate());
+            holder.YouGave.setText(transactionDetails.get(position).getYouGave());
+            holder.YouGot.setText(transactionDetails.get(position).getYouGot());
     }
 
     @Override
