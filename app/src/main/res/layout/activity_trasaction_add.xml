@@ -85,6 +85,13 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/generatePDF"
+            android:text="PDF"
+            android:layout_alignParentEnd="true" />
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

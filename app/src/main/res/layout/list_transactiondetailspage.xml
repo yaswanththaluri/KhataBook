@@ -34,7 +34,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/yougave"
-                android:gravity="center"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/money"
+                android:textColor="#bf1010"
                 android:background="@drawable/form_edittext1"
                />
             <TextView
@@ -42,7 +44,9 @@
                 android:layout_weight="2"
                 android:layout_height="match_parent"
                 android:id="@+id/yougot"
-                android:gravity="center"
+                android:drawableLeft="@drawable/money_green"
+                android:textColor="#10C73D"
+                android:gravity="center_vertical"
                 android:background="@drawable/form_edittext1"
                 />
         </LinearLayout>

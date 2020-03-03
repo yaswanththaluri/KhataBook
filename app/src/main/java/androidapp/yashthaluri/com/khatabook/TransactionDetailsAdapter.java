@@ -38,11 +38,13 @@ public class TransactionDetailsAdapter extends RecyclerView.Adapter<TransactionD
             if (transactionDetails.get(position).getYouGave().equals("GAVE"))
             {
                 holder.YouGave.setText(transactionDetails.get(position).getYouGot());
-                holder.YouGot.setText("");
+                holder.YouGot.setVisibility(View.INVISIBLE);
+                holder.YouGave.setVisibility(View.VISIBLE);
             }
             else
             {
-                holder.YouGave.setText("");
+                holder.YouGave.setVisibility(View.INVISIBLE);
+                holder.YouGot.setVisibility(View.VISIBLE);
                 holder.YouGot.setText(transactionDetails.get(position).getYouGot());
             }
 
