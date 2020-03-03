@@ -71,6 +71,18 @@
                 android:id="@+id/billdetails"
                 android:hint="@string/enterbill"
                 android:layout_below="@id/cardamount"
+                android:inputType="textShortMessage"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form_edittext"
+                style="@style/form_edit_text_style" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/noDays"
+                android:hint="No of days"
+                android:layout_below="@id/billdetails"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/form_edittext"
                 style="@style/form_edit_text_style" />
@@ -79,7 +91,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/intrest"
-                android:layout_below="@id/billdetails"
+                android:layout_below="@id/noDays"
                 android:layout_marginTop="25dp"
                 android:inputType="numberDecimal"
                 android:layout_marginStart="20dp"
@@ -103,7 +115,7 @@
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:id="@+id/calculate"
-                android:layout_below="@id/billdetails"
+                android:layout_below="@id/noDays"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp" />

@@ -10,41 +10,42 @@
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:background="#ffffff">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text=" 28 Feb 2020 . 01:17 AM"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:textAlignment="center"
-                android:id="@+id/date"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp">
+                android:background="@drawable/form_edittext1"
+                android:id="@+id/date">
 
             </TextView>
 
-            <EditText
-                android:layout_width="110dp"
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/yougave"
-                android:layout_toRightOf="@id/date"
-                android:layout_marginLeft="20dp"
-
-
+                android:gravity="center"
                 android:background="@drawable/form_edittext1"
                />
-            <EditText
-                android:layout_width="110dp"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="match_parent"
                 android:id="@+id/yougot"
-                android:layout_toRightOf="@id/yougave"
+                android:gravity="center"
                 android:background="@drawable/form_edittext1"
                 />
-        </RelativeLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

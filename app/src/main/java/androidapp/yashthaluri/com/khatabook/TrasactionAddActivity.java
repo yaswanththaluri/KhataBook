@@ -120,7 +120,7 @@ public class TrasactionAddActivity extends AppCompatActivity {
                         for (DataSnapshot i : dataSnapshot.getChildren())
                         {
                             CustomerTransactionsHelper helper = i.getValue(CustomerTransactionsHelper.class);
-                            transactionDetails.add(new TransactionDetails(helper.getDesc(),helper.getTransType(),helper.getAmount()));
+                            transactionDetails.add(new TransactionDetails(helper.getDate(),helper.getTransType(),helper.getAmount()));
                         }
                         transactionDetailsAdapter.notifyDataSetChanged();
                     }

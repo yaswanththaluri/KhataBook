@@ -40,9 +40,24 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
         Log.i("List", ""+customerdetailsModel);
         holder.PersonImage.setImageResource(customerdetailsModel.get(position).getBitmap());
 
+        int amountTot = Integer.parseInt(customerdetailsModel.get(position).getAmount());
+
         holder.personName.setText(customerdetailsModel.get(position).getName());
         holder.time.setText(customerdetailsModel.get(position).getTime());
-        holder.Amount.setText(customerdetailsModel.get(position).getAmount());
+
+        if (amountTot>=0)
+        {
+            holder.Amount.setText(customerdetailsModel.get(position).getAmount());
+            holder.AmountRed.setVisibility(View.INVISIBLE);
+            holder.Amount.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            holder.AmountRed.setText(""+(-1*amountTot));
+            holder.Amount.setVisibility(View.INVISIBLE);
+            holder.AmountRed.setVisibility(View.VISIBLE);
+        }
+
 
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +76,7 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
     }
     public class CustomerViewHolder extends RecyclerView.ViewHolder {
         ImageView PersonImage;
-        TextView personName,time,Amount;
+        TextView personName,time,Amount, AmountRed;
         LinearLayout item;
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,6 +86,7 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
             time =itemView.findViewById(R.id.time);
             Amount=itemView.findViewById(R.id.amount);
             item = itemView.findViewById(R.id.custItem);
+            AmountRed = itemView.findViewById(R.id.amountRed);
         }
     }
 }

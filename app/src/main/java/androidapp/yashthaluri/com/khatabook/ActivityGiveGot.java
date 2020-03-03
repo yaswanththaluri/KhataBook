@@ -1,10 +1,13 @@
 package androidapp.yashthaluri.com.khatabook;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +17,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import androidapp.yashthaluri.com.khatabook.Models.CustomerProfileHelper;
 import androidapp.yashthaluri.com.khatabook.Models.CustomerTransactionsHelper;
@@ -46,42 +53,100 @@ public class ActivityGiveGot extends AppCompatActivity {
         custId = getIntent().getStringExtra("customerUID");
         status = getIntent().getStringExtra("transType");
 
+        if (status.equals("GOT"))
+        {
+            binding.intrest.setVisibility(View.INVISIBLE);
+            binding.noDays.setVisibility(View.INVISIBLE);
+            binding.calculate.setVisibility(View.INVISIBLE);
+        }
+
         binding.calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String amount = binding.amount.getText().toString();
                 String  intrest = binding.intrest.getText().toString();
+                String nDays = binding.noDays.getText().toString();
 
-                Integer p = Integer.parseInt(amount);
-                Integer t = 1;
-                Integer r = Integer.parseInt(intrest);
 
-                String finalAmount = "Total Amount : "+(p+(p*t*r));
+                int p = Integer.parseInt(amount);
+                double t = Double.parseDouble(nDays);
+                int r = Integer.parseInt(intrest);
 
-                binding.totAmount.setText(finalAmount);
+                String tot = ""+(p+(p*t*r)/100);
+
+                Log.i("Amount", tot);
+
+                String tAmount = "Total Amount : ";
+
+                for (int i=0; i<tot.length(); i++)
+                {
+                    if(tot.charAt(i) == '.')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        tAmount += tot.charAt(i);
+                    }
+                }
+
+                binding.totAmount.setText(tAmount);
             }
         });
 
         binding.save.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 String amount = binding.amount.getText().toString();
                 String  intrest = binding.intrest.getText().toString();
                 String desc = binding.billdetails.getText().toString();
+                String nDays = binding.noDays.getText().toString();
 
-                Integer p = Integer.parseInt(amount);
-                Integer t = 1;
-                Integer r = Integer.parseInt(intrest);
 
-                pushDataToDatabase(""+(p+(p*t*r)), desc, intrest);
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                LocalDate localDate = LocalDate.now();
+                String date = ""+dtf.format(localDate);
+
+                if (!status.equals("GOT"))
+                {
+                    int p = Integer.parseInt(amount);
+                    double t = Double.parseDouble(nDays) / 12;
+                    int r = Integer.parseInt(intrest);
+
+                    String tot = ""+(p+(p*t*r)/100);
+
+                    String finalRound = "";
+
+                    for (int i=0; i<tot.length(); i++)
+                    {
+                        if(tot.charAt(i) == '.')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            finalRound += tot.charAt(i);
+                        }
+                    }
+
+
+                    pushDataToDatabase(finalRound, desc, intrest, nDays, date);
+                }
+                else
+                {
+                    pushDataToDatabase(amount, desc, "0", "0", date);
+                }
+
+
             }
         });
     }
 
 
-    public void pushDataToDatabase(final String amount, String desc, String  intrest)
+    public void pushDataToDatabase(final String amount, String desc, String  intrest, String days, String date)
     {
-        final CustomerTransactionsHelper helper = new CustomerTransactionsHelper(amount, status, desc, intrest);
+        final CustomerTransactionsHelper helper = new CustomerTransactionsHelper(amount, status, desc, intrest, days, date);
         reference.child("CustomerTransactions").child(user.getUid()).child(custId).push().setValue(helper);
         final int[] temp1 = {0, 0};
 
