@@ -103,7 +103,7 @@ public class TrasactionAddActivity extends AppCompatActivity {
         binding.generatePDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bitmap = loadBitmapFromView(binding.transactionDetailsrecyclerview, binding.transactionDetailsrecyclerview.getWidth(), binding.transactionDetailsrecyclerview.getHeight());
+                bitmap = loadBitmapFromView(binding.parent, binding.parent.getWidth(), binding.parent.getHeight());
                 createPdf();
             }
         });
