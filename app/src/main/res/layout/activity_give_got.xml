@@ -111,6 +111,7 @@
                 android:layout_height="wrap_content"
                 android:background="#D32929"
                 android:text="CALUCULATE"
+                android:visibility="invisible"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:padding="10dp"

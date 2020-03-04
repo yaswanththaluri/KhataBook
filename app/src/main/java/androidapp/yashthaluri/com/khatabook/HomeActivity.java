@@ -87,6 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.detailRecyclerview.setAdapter(customerHomeAdapter);
 
 
+
     }
 
 

@@ -38,6 +38,7 @@ import java.util.ArrayList;
 
 import androidapp.yashthaluri.com.khatabook.Models.CustomerProfileHelper;
 import androidapp.yashthaluri.com.khatabook.Models.CustomerTransactionsHelper;
+import androidapp.yashthaluri.com.khatabook.Models.ProfileHelper;
 import androidapp.yashthaluri.com.khatabook.Models.TransactionDetails;
 import androidapp.yashthaluri.com.khatabook.databinding.ActivityTrasactionAddBinding;
 
@@ -165,11 +166,38 @@ public class TrasactionAddActivity extends AppCompatActivity {
     }
 
 
+    public void getBalances()
+    {
+        reference.child("khatas").child(user.getUid()).child(customerId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                CustomerProfileHelper helper = dataSnapshot.getValue(CustomerProfileHelper.class);
+                int amount = Integer.parseInt(helper.getMoney());
+                if (amount<=0)
+                {
+                    String t = ""+(-1*amount);
+                    binding.moneyUget.setText(t);
+                }
+                else
+                {
+                    binding.moneyUgive.setText(amount);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
     @Override
     protected void onStart()
     {
         super.onStart();
         populateData();
+        getBalances();
         populateTransactionData();
         transactionDetails.clear();
     }
